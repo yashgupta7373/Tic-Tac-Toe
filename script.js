@@ -80,11 +80,12 @@ boxes.forEach((box) => {
         box.style.pointerEvents="none";
 
         checkWinner();
-    })
+    });
 });
 
 //check winner
 const checkWinner=()=>{
+    let win = false;
     for(let pattern of winPattern){
         let position1 = boxes[pattern[0]].innerText;
         let position2 = boxes[pattern[1]].innerText;
@@ -92,6 +93,7 @@ const checkWinner=()=>{
 
         if(position1!="" && position2!="" && position3!=""){
             if(position1===position2 && position2===position3){
+                win=true;
                 const winner = position1 === 'X'? player1name:player2name;
                 turn.innerText = `${winner} (${position1}) won the match 🎉`;
                 if(position1==='X'){
@@ -120,13 +122,13 @@ const checkWinner=()=>{
                     box.style.pointerEvents="none";
                 });
                 break;
-            }else if(count===9){
-                turn.innerText = "It's s Draw!😵";
-                drawGame++;
-                drawScoreDisplay.innerHTML=drawGame;
-                break;
             }
         }
+    }
+    if(!win && count==9){
+        turn.innerText = "It's s Draw!😵";
+        drawGame++;
+        drawScoreDisplay.innerHTML=drawGame;
     }
 };
 
@@ -167,7 +169,9 @@ newGame.addEventListener("click", ()=>{
     modal.classList.add("active");
 });
 //restart game
-restart.addEventListener("click", resetGame);
+restart.addEventListener("click", () => {
+    resetGame();
+});
 
 //mode
 themeBtn.addEventListener("click", () => {
