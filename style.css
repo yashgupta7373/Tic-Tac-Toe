@@ -19,7 +19,7 @@ body{
     justify-content: space-between;
 }
 .nav{
-    /* background-color: #764ba2; */
+    /* background-color: #764ba2; */ 
     height: 55px;
     display: flex;
     align-items: center;
@@ -45,7 +45,7 @@ body{
     /* background-color: red; */
     text-align: center;
     margin: 10px 0;
-    color: wheat;
+    color: #ffeaa7;
 }
 .game h1{
     font-weight: bolder;
@@ -176,4 +176,27 @@ body{
     border: none;
     border-radius: 8px;
     cursor: pointer;
+}
+
+/* leaderboard */
+.leaderBoard{
+    /* background-color: #2d3436; */
+    align-self: center;
+}
+.leaderBoardBox{
+    background-color: rgba(240, 234, 235, 0.707);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(19, 49, 181, 0.477);
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: fit-content;
+}
+.player1, .player2, .draw{
+    text-align: center;
+    color: #2d3436;
+    font-size: 16px;
+    font-weight: 600;
 }

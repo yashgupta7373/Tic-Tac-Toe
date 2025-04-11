@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Modal for player name input -->
     <div class="modal active" id="name-modal">
         <div class="modal-content">
-            <h2>Enter Player Names</h2>
-            <input type="text" id="player1" placeholder="Player A Name" />
-            <input type="text" id="player2" placeholder="Player B Name" />
-            <button id="start-game">Start Game</button>
+            <h2>Enter Player Names</h2> 
+                <input type="text" id="player1" placeholder="Player A Name (X)" />
+                <input type="text" id="player2" placeholder="Player B Name (O)" />
+                <button type="submit" id="start-game">Start Game</button>
         </div>
     </div>
 
@@ -44,15 +44,33 @@
                 <button id="new-game" title="Start new game">New Game</button>
             </div>
         </div>
+
+        <!-- leaderboard -->
+        <div class="leaderBoard">
+            <div class="leaderBoardBox">
+                <div class="player1">
+                    <div id="p1name">Player 1:</div>
+                    <div id="p1score">0</div>
+                </div>
+                <div class="player2">
+                    <div id="p2name">Player 2:</div>
+                    <div id="p2score">0</div>
+                </div>
+                <div class="draw">
+                    <div id="grawGame">Draw:</div>
+                    <div id="drawScore">0</div>
+                </div>
+            </div>
+        </div>
         
         
         <div class="footer">
             <p>Made with ❤️ YashGupta</p>
         </div>
     </div>
-    <audio id="win-sound" src="win.mp3" preload="auto"></audio>
-    <audio src="click.mp3" id="click" preload="auto"></audio>
-    <audio src="click2.mp3" id="click2" preload="auto"></audio>
+    <audio src="assets/win.mp3" id="win-sound" preload="auto"></audio>
+    <audio src="assets/click.mp3" id="click" preload="auto"></audio>
+    <audio src="assets/click2.mp3" id="click2" preload="auto"></audio>
 
 
     <script src="script.js"></script>
